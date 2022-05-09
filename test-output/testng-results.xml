@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-08T17:21:34 EET" name="Default suite" finished-at="2022-05-08T17:21:49 EET" duration-ms="14940">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@292b08d6]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2022-05-08T17:21:34 EET" name="Default test" finished-at="2022-05-08T17:21:49 EET" duration-ms="14940">
+      <class name="runner.TestRunner">
+        <test-method is-config="true" signature="setUpData()[pri:0, instance:runner.TestRunner@292b08d6]" started-at="2022-05-08T17:21:33 EET" name="setUpData" finished-at="2022-05-08T17:21:34 EET" duration-ms="929" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpData -->
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@292b08d6]" started-at="2022-05-08T17:21:34 EET" name="setUpClass" finished-at="2022-05-08T17:21:35 EET" duration-ms="582" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3520958b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:runner.TestRunner@292b08d6]" started-at="2022-05-08T17:21:35 EET" name="setup" finished-at="2022-05-08T17:21:47 EET" duration-ms="12418" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@292b08d6]" started-at="2022-05-08T17:21:47 EET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-05-08T17:21:48 EET" duration-ms="191" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User Registeration"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Registeration"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
+at Pages.HomePage.pressOnSignInBtn(HomePage.java:17)
+at stepDefintion.UserRegisteration.the_user_in_the_home_page(UserRegisteration.java:27)
+at ✽.the user in the home page(file:///C:/Users/Lenovo/eclipse-workspace/Test_Automation_framework/src/test/java/feature/UserRegisteration.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="takeScreenShotOnFaliure(org.testng.ITestResult)[pri:0, instance:runner.TestRunner@292b08d6]" started-at="2022-05-08T17:21:48 EET" name="takeScreenShotOnFaliure" finished-at="2022-05-08T17:21:48 EET" duration-ms="396" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=runScenario status=FAILURE method=AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@292b08d6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenShotOnFaliure -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:runner.TestRunner@292b08d6]" started-at="2022-05-08T17:21:48 EET" name="tearDown" finished-at="2022-05-08T17:21:49 EET" duration-ms="1194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@292b08d6]" started-at="2022-05-08T17:21:49 EET" name="tearDownClass" finished-at="2022-05-08T17:21:49 EET" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runner.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
