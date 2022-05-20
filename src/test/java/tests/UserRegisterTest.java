@@ -1,44 +1,42 @@
 package tests;
 
 
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-import Pages.CreateAccountPage;
+import java.sql.Driver;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+
 import Pages.HomePage;
-import Pages.UserRegisterPage;
+import utilities.BrowserActions;
 
-public class UserRegisterTest extends BaseTest{
-	@Test
-	public void UserRegister() {
+public class UserRegisterTest {
 
-		HomePage Home_Page = PageFactory.initElements(driver, HomePage.class);
-		
-		CreateAccountPage Create_Account_Page = PageFactory.initElements(driver, CreateAccountPage.class);
-		UserRegisterPage User_Register_Page = PageFactory.initElements(driver, UserRegisterPage.class);
+	public String className;
+	public String driverName;
+	public BrowserActions browserAcrtions = new BrowserActions();
 
-		Home_Page.pressOnSignInBtn();
-		Create_Account_Page.enterCreateAccount(excel.getStringData("enterCreateAccount", 0, 0));
-
-		User_Register_Page.fillUserInfo(
-				excel.getStringData("UserRigster", 0, 0),
-				excel.getStringData("UserRigster",0, 1),
-				excel.getStringData("UserRigster", 0, 2),
-				(int)Math.round(excel.getNumericData("UserRigster",0, 3)),
-				(int)Math.round(excel.getNumericData("UserRigster", 0, 4)),
-				(int)Math.round(excel.getNumericData("UserRigster", 0, 5)));
-		
-
-		User_Register_Page.fillUserAddressInfo(
-				excel.getStringData("UserRigster", 0, 6),
-				excel.getStringData("UserRigster", 0, 7),
-				excel.getStringData("UserRigster", 0, 8),
-				excel.getStringData("UserRigster", 0, 9),
-				(int)Math.round(excel.getNumericData("UserRigster",0, 10)),
-				excel.getStringData("UserRigster",0, 11),
-				(int)Math.round(excel.getNumericData("UserRigster",0, 12)),
-				excel.getStringData("UserRigster", 0, 13),
-				excel.getStringData("UserRigster", 0, 14));
+	@BeforeClass
+	@Parameters("driver")
+	public void setup(String driverName) {
+		className =  "UserRegisterTest";
+		driverName = "firefoxDriver";
+		BrowserActions.driverSetup(className, driverName);
 
 	}
+	@Test
+	public void HomePageSignIn() {
+		String url="http://automationpractice.com/index.php";
+		HomePage homePage = new HomePage(className);
+		homePage.navigateToHomePage(url);
+		homePage.pressOnSignInBtn();
+	}
+	@AfterClass
+	void closeDriver() {
+		BrowserActions.closeDriver(className);
+	}
+
 }

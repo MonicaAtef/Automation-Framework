@@ -1,19 +1,26 @@
 package Pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
 
-public class HomePage extends PageBase {
+import utilities.UIActions;
 
-	public HomePage(WebDriver ldriver) {
-		super(ldriver);
+public class HomePage  {
+
+	UIActions uiActions ;
+	String testClassName;
+	public HomePage(String testClassName)
+	{
+		this.testClassName = testClassName;
+		uiActions = new UIActions(testClassName);
 	}
+   
+	
+	By signInButton = By.linkText("Sign in");
 
-	@FindBy(linkText="Sign in") 
-	WebElement signInBtn;
-
+	public void navigateToHomePage(String url) {
+		uiActions.navigateToURL(url);
+	}
 	public void pressOnSignInBtn() {
-		signInBtn.click();
+		uiActions.oneClick(signInButton);
 	}
 }

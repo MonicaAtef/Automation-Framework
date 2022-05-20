@@ -1,24 +1,29 @@
 package Pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
 
-public class CreateAccountPage extends PageBase {
+import utilities.UIActions;
 
-	public CreateAccountPage(WebDriver ldriver) {
-		super(ldriver);
+public class CreateAccountPage  {
+
+	UIActions uiActions ;
+	String testClassName;
+	public CreateAccountPage(String testClassName)
+	{
+		this.testClassName = testClassName;
+		uiActions = new UIActions(testClassName);
 	}
-
-	@FindBy(id="email_create") 
-	WebElement createAccountTxt;
-
-	@FindBy(id="SubmitCreate") 
-	WebElement createAccountBtn;
+   
 	
+	By emailCreateText = By.id("email_create"); 
+	By submitCreateAccount = By.id("SubmitCreate"); 
+	
+	public void navigateToCreateAccount(String ur) {
+		uiActions.navigateToURL(ur);
+	}
 	public void enterCreateAccount(String email) {
-		createAccountTxt.sendKeys(email);
-		createAccountBtn.click();
+		uiActions.type(emailCreateText, email);
+		uiActions.oneClick(submitCreateAccount);
 
 	}
 

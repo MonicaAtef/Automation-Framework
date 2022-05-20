@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite thread-count="1" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="tests" name="Test1(failed)">
+    <parameter name="driver" value="chromeDriver"/>
     <classes>
-      <class name="tests.UserRegisterTest">
+      <class name="tests.CreateAccountTest">
         <methods>
-          <include name="UserRegister"/>
-          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="setUpData"/>
+          <include name="HomePageSignIn"/>
+          <include name="closeDriver"/>
         </methods>
-      </class> <!-- tests.UserRegisterTest -->
+      </class> <!-- tests.CreateAccountTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->
