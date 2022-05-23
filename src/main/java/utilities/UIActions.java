@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.Wait.ConditionsEnum;
+
 
 public class UIActions {
 
@@ -17,25 +19,24 @@ public class UIActions {
 		TEXT, VALUE,INDEX;
 	}
 
-	public WebElement locateElement(By elementlocator) {
+	public WebElement locateElement(By elementlocator,ConditionsEnum condition,int time) {
+		new Wait().wait( driver, time, elementlocator,condition);
 		return driver.findElement(elementlocator);
-
-
+		
 	}
-
-	public void oneClick(By element) {
-		WebElement currentElement = locateElement(element);
+	public void oneClick(By element,ConditionsEnum condition,int time) {
+		WebElement currentElement = locateElement(element,condition,time);
 		currentElement.click();
 	}
-	public void doubleClick(By element) {
+	public void doubleClick(By element,ConditionsEnum condition,int time) {
 		Actions seleniumActions = new Actions(driver);
-		WebElement currentElement = locateElement(element);
+		WebElement currentElement = locateElement(element,condition,time);
 		seleniumActions.moveToElement(currentElement).doubleClick().perform();
 
 	}
-	public void dropDownSelect(By element, SelectType selectType,String option) {
+	public void dropDownSelect(By element, SelectType selectType,String option,ConditionsEnum condition,int time) {
 
-		WebElement currentElement = locateElement(element);
+		WebElement currentElement = locateElement(element,condition,time);
 		Select selectObject = new Select(currentElement);
 
 		switch(selectType){
@@ -52,14 +53,15 @@ public class UIActions {
 		}
 
 	}
-	public void type(By element,String text) {
-		WebElement currentElement = locateElement(element);
+	public void type(By element,String text,ConditionsEnum condition,int time) {
+		WebElement currentElement = locateElement(element,condition,time);
 		currentElement.clear();
 		currentElement.sendKeys(text);
 	}
-	public void navigateToURL(String url) {
-		driver.get(url);
-	}
-	
+	public String getText(By element,ConditionsEnum condition,int time) {
+		WebElement currentElement = locateElement(element,condition,time);
+		return currentElement.getText();		
+	}  
+
 }
 

@@ -10,7 +10,7 @@
  <test  name="Test1">
     <parameter name="driver" value="chromeDriver"/>
     <classes>
-       <class name="tests.CreateAccountTest"/>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -3,6 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 
 import utilities.UIActions;
+import utilities.Wait.ConditionsEnum;
 
 public class HomePage  {
 
@@ -16,11 +17,7 @@ public class HomePage  {
    
 	
 	By signInButton = By.linkText("Sign in");
-
-	public void navigateToHomePage(String url) {
-		uiActions.navigateToURL(url);
-	}
 	public void pressOnSignInBtn() {
-		uiActions.oneClick(signInButton);
+		uiActions.oneClick(signInButton,ConditionsEnum.ElementToBeClickable,10);
 	}
 }

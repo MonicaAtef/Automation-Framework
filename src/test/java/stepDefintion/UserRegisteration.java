@@ -33,7 +33,7 @@ public class UserRegisteration extends AbstractTestNGCucumberTests{
 
 		//Assert.assertEquals("My Store", driver.getTitle());
 		String url="http://automationpractice.com/index.php";
-		page.navigateToHomePage(url);
+		BrowserActions.navigateToURL(url);
 		page.pressOnSignInBtn();
 		//Assert.assertEquals("Login - My Store", driver.getTitle());
 		create_Account.enterCreateAccount("monicaatef46@gmail.com");	 

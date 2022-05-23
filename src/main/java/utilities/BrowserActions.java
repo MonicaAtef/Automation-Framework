@@ -1,6 +1,7 @@
 package utilities;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserActions {
 
-	public static HashMap<String,WebDriver> mapper = new HashMap<String,WebDriver>();
+	public static Map<String,WebDriver> mapper = new HashMap<String,WebDriver>();
 	public static WebDriver driver;
 	public static void  driverSetup(String classname, String driverName) {
 
@@ -36,9 +37,12 @@ public class BrowserActions {
 		else
 			System.out.println("We don't support this browser");
 	}
+	public static void navigateToURL(String url) {
+		driver.get(url);
+	}
 	public static void closeDriver(String classname)
 	{
-		driver.quit();
+		mapper.get(classname).close();
 		mapper.remove(classname);
 	}
 }
