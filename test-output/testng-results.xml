@@ -2,37 +2,37 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-23T14:25:10 EET" name="Suite" finished-at="2022-05-23T14:25:27 EET" duration-ms="16619">
+  <suite started-at="2022-05-24T12:17:56 EET" name="Suite" finished-at="2022-05-24T12:19:50 EET" duration-ms="114390">
     <groups>
     </groups>
-    <test started-at="2022-05-23T14:25:10 EET" name="Test" finished-at="2022-05-23T14:25:27 EET" duration-ms="16606">
+    <test started-at="2022-05-24T12:17:56 EET" name="Test" finished-at="2022-05-24T12:19:50 EET" duration-ms="114375">
       <class name="tests.UserRegisterTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.UserRegisterTest@76494737]" started-at="2022-05-23T14:25:10 EET" name="setup" finished-at="2022-05-23T14:25:14 EET" duration-ms="4165" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.UserRegisterTest@76494737]" started-at="2022-05-24T12:17:56 EET" name="setup" finished-at="2022-05-24T12:17:59 EET" duration-ms="3075" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[edgeDriver]]>
+                <![CDATA[Headless]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="PressOnSignInButtonTest()[pri:0, instance:tests.UserRegisterTest@76494737]" started-at="2022-05-23T14:25:14 EET" name="PressOnSignInButtonTest" finished-at="2022-05-23T14:25:24 EET" duration-ms="9879" status="PASS">
+        <test-method signature="PressOnSignInButtonTest()[pri:0, instance:tests.UserRegisterTest@76494737]" started-at="2022-05-24T12:17:59 EET" name="PressOnSignInButtonTest" finished-at="2022-05-24T12:19:41 EET" duration-ms="102138" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PressOnSignInButtonTest -->
-        <test-method signature="EnterCreateAccountEmail()[pri:0, instance:tests.UserRegisterTest@76494737]" started-at="2022-05-23T14:25:24 EET" name="EnterCreateAccountEmail" finished-at="2022-05-23T14:25:26 EET" depends-on-methods="tests.UserRegisterTest.PressOnSignInButtonTest" duration-ms="1912" status="PASS">
+        <test-method signature="EnterCreateAccountEmail()[pri:0, instance:tests.UserRegisterTest@76494737]" started-at="2022-05-24T12:19:41 EET" name="EnterCreateAccountEmail" finished-at="2022-05-24T12:19:49 EET" depends-on-methods="tests.UserRegisterTest.PressOnSignInButtonTest" duration-ms="8567" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCreateAccountEmail -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:tests.UserRegisterTest@76494737]" started-at="2022-05-23T14:25:26 EET" name="closeDriver" finished-at="2022-05-23T14:25:27 EET" duration-ms="575" status="PASS">
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:tests.UserRegisterTest@76494737]" started-at="2022-05-24T12:19:49 EET" name="closeDriver" finished-at="2022-05-24T12:19:50 EET" duration-ms="526" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
       </class> <!-- tests.UserRegisterTest -->
     </test> <!-- Test -->
-    <test started-at="2022-05-23T14:25:27 EET" name="Test1" finished-at="2022-05-23T14:25:27 EET" duration-ms="1">
+    <test started-at="2022-05-24T12:19:50 EET" name="Test1" finished-at="2022-05-24T12:19:50 EET" duration-ms="0">
     </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 </testng-results>

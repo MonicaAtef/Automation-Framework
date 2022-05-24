@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -31,6 +32,16 @@ public class BrowserActions {
 		else if (driverName.equalsIgnoreCase("firefoxDriver")) {
 			WebDriverManager.firefoxdriver().setup();
 			mapper.put(classname,new FirefoxDriver());
+			driver = mapper.get(classname);
+
+		}
+		else if (driverName.equalsIgnoreCase("Headless")) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--no-sandbox");
+			chromeOptions.addArguments("--headless");
+			chromeOptions.addArguments("disable-gpu");	
+			mapper.put(classname,new ChromeDriver(chromeOptions));
 			driver = mapper.get(classname);
 
 		}
