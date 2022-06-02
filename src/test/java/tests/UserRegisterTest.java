@@ -1,46 +1,38 @@
 package tests;
 
-
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-
+import org.testng.Reporter;
+import Actions.BrowserActions;
 import Pages.CreateAccountPage;
 import Pages.HomePage;
-import utilities.BrowserActions;
+import Pages.RegisterPage;
 
-public class UserRegisterTest {
+public class UserRegisterTest extends BaseTest {
 
-	public String className;
-	public String driverName;
-
-	@BeforeClass
-	@Parameters("driver")
-	public void setup(String driverName) {
-		className =  "UserRegisterTest";
-		driverName = "firefoxDriver";
-		BrowserActions.driverSetup(className, driverName);
-
-	}
 	@Test
 	public void PressOnSignInButtonTest() {
-		String url="http://automationpractice.com/index.php";
+		String url = Config.getDataFromConfig("applicationURL");
 		BrowserActions.navigateToURL(url);
 		HomePage homePage = new HomePage(className);
 		homePage.pressOnSignInBtn();
-	}
-	@Test(dependsOnMethods="PressOnSignInButtonTest")
-	public void EnterCreateAccountEmail() {
-		String url="http://automationpractice.com/index.php?controller=authentication&back=my-account";
-		String email = "m@gamil.com";
-		CreateAccountPage createAccount = new CreateAccountPage(className);
-		BrowserActions.navigateToURL(url);
-		createAccount.enterCreateAccount(email);
-	}  
-	@AfterClass
-	void closeDriver() {
-		BrowserActions.closeDriver(className);
+		String tabName = "account";
+		Reporter.getCurrentTestResult().getTestContext().setAttribute("sheetName", tabName);
 	}
 
+	@Test(dependsOnMethods = "PressOnSignInButtonTest", dataProvider = "ExcelData")
+	public void EnterCreateAccountEmail(String email) {
+		CreateAccountPage createAccount = new CreateAccountPage(className);
+		createAccount.enterCreateAccount(email);
+		String tabName = "UserData";
+		Reporter.getCurrentTestResult().getTestContext().setAttribute("sheetName", tabName);
+	}
+
+	@Test(dependsOnMethods = "EnterCreateAccountEmail", dataProvider = "ExcelData")
+	public void EnterUserData(String gender, String firstName, String lastName, String password, String daysIndex,
+			String month, String yearIndex, String addressFName, String addressLName, String address, String city,
+			String stateIndex, String postalCode, String country, String phone, String alias) {
+		RegisterPage regPage = new RegisterPage(className);
+		regPage.userRegister(gender, firstName, lastName, password, daysIndex, month, yearIndex);
+		regPage.addressFill(addressFName, addressLName, address, city, stateIndex, postalCode, country, phone, alias);
+	}
 }

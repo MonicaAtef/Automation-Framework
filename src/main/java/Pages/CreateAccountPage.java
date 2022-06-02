@@ -1,26 +1,22 @@
 package Pages;
 
-import org.openqa.selenium.By;
-
-import utilities.UIActions;
+import utilities.Locaters.LocateStrategy;
 import utilities.Wait.ConditionsEnum;
 
-public class CreateAccountPage  {
+public class CreateAccountPage extends BasePage {
 
-	UIActions uiActions ;
-	String testClassName;
-	
-	By emailCreateText = By.id("email_create"); 
-	By submitCreateAccount = By.id("SubmitCreate");  
-	
-	public CreateAccountPage(String testClassName)
-	{
-		this.testClassName = testClassName;
-		uiActions = new UIActions(testClassName);
+	public CreateAccountPage(String testClassName) {
+		super(testClassName);
 	}
+
+	String emailTxt = "email_create";
+	String submitCreateAccount = "SubmitCreate";
+
 	public void enterCreateAccount(String email) {
-		uiActions.type(emailCreateText, email,ConditionsEnum.ElementToBeClickable,10);
-		uiActions.oneClick(submitCreateAccount,ConditionsEnum.ElementToBeClickable,10);
+
+		uiActions2.type(emailTxt, email, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 20);
+
+		uiActions2.oneClick(submitCreateAccount, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 20);
 
 	}
 

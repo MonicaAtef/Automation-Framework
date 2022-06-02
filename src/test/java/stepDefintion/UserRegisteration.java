@@ -1,26 +1,27 @@
 package stepDefintion;
+import java.net.MalformedURLException;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import Actions.BrowserActions;
+import Actions.SeleniumGridBrowserActions;
 import Pages.CreateAccountPage;
 import Pages.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
-import utilities.BrowserActions;
 
 public class UserRegisteration extends AbstractTestNGCucumberTests{
 
-	public String className;
-	public String driverName;
-	public BrowserActions browserAcrtions = new BrowserActions();
+	WebDriver driver;
 
 	@BeforeClass
-	public void setup() {
-		className =  "UserRegisteration";
-		driverName = "edgeDriver";
-		BrowserActions.driverSetup(className, driverName);
+	public void setup() throws MalformedURLException {
+		String driverName="chome";
+		BrowserActions.driverSetup(className,driverName);
 	}
 
 	HomePage page;
@@ -32,8 +33,7 @@ public class UserRegisteration extends AbstractTestNGCucumberTests{
 		create_Account= new CreateAccountPage(className);
 
 		//Assert.assertEquals("My Store", driver.getTitle());
-		String url="http://automationpractice.com/index.php";
-		BrowserActions.navigateToURL(url);
+	//	BrowserActions.navigateToURL(url);
 		page.pressOnSignInBtn();
 		//Assert.assertEquals("Login - My Store", driver.getTitle());
 		create_Account.enterCreateAccount("monicaatef46@gmail.com");	 
