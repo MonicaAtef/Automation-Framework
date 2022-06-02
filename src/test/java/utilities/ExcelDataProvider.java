@@ -1,42 +1,34 @@
 package utilities;
 
-import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelDataProvider {
 	public XSSFWorkbook wb;
+	//static FileInputStream file =null;
 
-	public ExcelDataProvider() {
+	public Object[][] getExcelData(String sheetName) throws IOException {
+		String filePath ="src/test/resources/UserData.xlsx";
+		FileInputStream fis = new FileInputStream(filePath);
+        XSSFWorkbook wb = new XSSFWorkbook(fis);
+        XSSFSheet sheet = wb.getSheet(sheetName);
 
-		//get file Location 
-		File src = new File("./testData/AutomationPracticeData.xlsx");
-		try {
-			//transform file to bytes format 
-			FileInputStream stream = new FileInputStream(src);
-			//workbook is first layer of excel sheet
-			wb = new XSSFWorkbook(stream);
-		} catch (Exception e) {
-			System.out.println("Unable to read excel file" +e.getMessage());
-		}
+        int TotalNumberOfRows = (sheet.getLastRowNum() + 1);
+        int TotalNumberOfCols = sheet.getRow(0).getLastCellNum();
 
-	}
-	//get data in form of string
-	public String getStringData(String sheetName,int rowIndex,int colIndex) {
-		String output = wb.getSheet(sheetName).getRow(rowIndex).getCell(colIndex).getRichStringCellValue().getString();
-		System.out.println(output);
-		return	wb.getSheet(sheetName).getRow(rowIndex).getCell(colIndex).getRichStringCellValue().getString();
-	}
-	public String getStringData(int sheetIndex,int rowIndex,int colIndex) {
-		return	wb.getSheetAt(sheetIndex).getRow(rowIndex).getCell(colIndex).getRichStringCellValue().toString();
-	}
-	//get data in form of double
-	public int getNumericData(String sheetName,int rowIndex,int colIndex) {
-		return (int)Math.round(wb.getSheet(sheetName).getRow(rowIndex).getCell(colIndex).getNumericCellValue());
-	}
-	public int getNumericData(int sheetIndex,int rowIndex,int colIndex) {
-		return	(int)Math.round(wb.getSheetAt(sheetIndex).getRow(rowIndex).getCell(colIndex).getNumericCellValue());
-	}
+        String[][] arrayExcelData = new String[TotalNumberOfRows][TotalNumberOfCols];
 
+        for (int i = 0; i < TotalNumberOfRows; i++) {
+            for (int j = 0; j < TotalNumberOfCols; j++) {
+                XSSFRow row = sheet.getRow(i);
+                arrayExcelData[i][j] = row.getCell(j).toString();
+            }
+        }
+        wb.close();
+        return arrayExcelData;
+    }
 }

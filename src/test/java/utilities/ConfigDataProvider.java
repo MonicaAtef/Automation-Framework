@@ -10,7 +10,7 @@ public class ConfigDataProvider {
 
 	public ConfigDataProvider() {
 		//get file Location 
-		File src = new File("./Configiration/Config.properties");
+		File src = new File("src/test/resources/Config.properties");
 		try {
 			//transform file to bytes format 
 			FileInputStream stream = new FileInputStream(src);
@@ -23,13 +23,5 @@ public class ConfigDataProvider {
 	}
 	public String getDataFromConfig(String keyToSearch) {
 		return pro.getProperty(keyToSearch);
-	} 
-
-	public String getBrowser() {
-		return pro.getProperty("driver");
-	} 
-	public String getApplicationURL() {
-
-		return pro.getProperty("applicationURL");
 	} 
 }

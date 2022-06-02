@@ -6,9 +6,10 @@
       <class name="tests.UserRegisterTest">
         <methods>
           <include name="PressOnSignInButtonTest"/>
+          <include name="EnterUserData" invocation-numbers="0"/>
           <include name="EnterCreateAccountEmail"/>
-          <include name="closeDriver"/>
           <include name="setup"/>
+          <include name="closeDriver"/>
         </methods>
       </class> <!-- tests.UserRegisterTest -->
     </classes>

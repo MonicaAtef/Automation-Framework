@@ -1,23 +1,18 @@
 package Pages;
 
-import org.openqa.selenium.By;
-
-import utilities.UIActions;
+import utilities.Locaters.LocateStrategy;
 import utilities.Wait.ConditionsEnum;
 
-public class HomePage  {
+public class HomePage extends BasePage {
 
-	UIActions uiActions ;
-	String testClassName;
-	public HomePage(String testClassName)
-	{
-		this.testClassName = testClassName;
-		uiActions = new UIActions(testClassName);
+	public HomePage(String testClassName) {
+		super(testClassName);
 	}
-   
-	
-	By signInButton = By.linkText("Sign in");
+
+	String signIn = "Sign in";
+
 	public void pressOnSignInBtn() {
-		uiActions.oneClick(signInButton,ConditionsEnum.ElementToBeClickable,10);
+
+		uiActions2.oneClick(signIn, LocateStrategy.LINKTEXT, ConditionsEnum.presenceOfElementLocated, 20);
 	}
 }
