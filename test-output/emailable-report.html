@@ -9,13 +9,21 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">28,371</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">75,741</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">tests.UserRegisterTest</td><td><a href="#m0">EnterCreateAccountEmail</a></td><td rowspan="2">1654174983914</td><td rowspan="2">144</td></tr><tr class="passedeven"><td><a href="#m1">EnterCreateAccountEmail</a></td></tr><tr class="passedeven"><td><a href="#m2">EnterUserData</a></td><td rowspan="1">1654174984191</td><td rowspan="1">10604</td></tr><tr class="passedeven"><td><a href="#m3">PressOnSignInButtonTest</a></td><td rowspan="1">1654174968877</td><td rowspan="1">14308</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">runner.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1654271900361</td><td rowspan="1">114</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">tests.UserRegisterTest#EnterCreateAccountEmail</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>monicaatef46@gmail.com</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">tests.UserRegisterTest#EnterCreateAccountEmail</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>misa@gmail.com</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">tests.UserRegisterTest#EnterUserData</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th><th>Parameter #8</th><th>Parameter #9</th><th>Parameter #10</th><th>Parameter #11</th><th>Parameter #12</th><th>Parameter #13</th><th>Parameter #14</th><th>Parameter #15</th><th>Parameter #16</th></tr><tr class="param stripe"><td>Mrs.</td><td>meko</td><td>atef</td><td>MonicaAtef1997</td><td>0</td><td>May  </td><td>0</td><td>Monica</td><td>Atef</td><td>helioplis</td><td>cairo</td><td>5</td><td>200</td><td>1</td><td>01279088228</td><td>korba</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">tests.UserRegisterTest#PressOnSignInButtonTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">runner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;User Registeration&quot;</td><td>&quot;User Registeration&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.IllegalArgumentException: Input must be set
+	at org.openqa.selenium.internal.Require.nonNull(Require.java:56)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:97)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:128)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:61)
+	at utilities.Wait.wait(Wait.java:22)
+	at utilities.Locaters.locateElement(Locaters.java:42)
+	at Actions.UIActions.oneClick(UIActions.java:30)
+	at Pages.HomePage.pressOnSignInBtn(HomePage.java:16)
+	at stepDefintion.UserRegisteration.the_user_in_the_home_page(UserRegisteration.java:20)
+	at ✽.the user in the home page(file:///C:/Users/Lenovo/eclipse-workspace/Test_Automation_framework/src/test/java/feature/UserRegisteration.feature:5)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

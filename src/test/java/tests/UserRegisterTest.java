@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
+
 import org.testng.Reporter;
 import Actions.BrowserActions;
 import Pages.CreateAccountPage;
@@ -20,7 +21,7 @@ public class UserRegisterTest extends BaseTest {
 	}
 
 	@Test(dependsOnMethods = "PressOnSignInButtonTest", dataProvider = "ExcelData")
-	public void EnterCreateAccountEmail(String email) {
+	public void EnterCreateAccountEmail(String email){
 		CreateAccountPage createAccount = new CreateAccountPage(className);
 		createAccount.enterCreateAccount(email);
 		String tabName = "UserData";

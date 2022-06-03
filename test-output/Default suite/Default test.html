@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 02 15:02:46 EET 2022</td>
+<td>Started on:</td><td>Fri Jun 03 17:57:04 EET 2022</td>
 </tr>
-<tr><td>Total time:</td><td>28 seconds (28371 ms)</td>
+<tr><td>Total time:</td><td>75 seconds (75741 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,33 +67,41 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.UserRegisterTest.PressOnSignInButtonTest()'><b>PressOnSignInButtonTest</b><br>Test class: tests.UserRegisterTest</td>
-<td></td>
-<td>14</td>
-<td>tests.UserRegisterTest@5633ed82</td></tr>
-<tr>
-<td title='tests.UserRegisterTest.EnterUserData()'><b>EnterUserData</b><br>Test class: tests.UserRegisterTest<br>Parameters: Mrs., meko, atef, MonicaAtef1997, 0, May  , 0, Monica, Atef, helioplis, cairo, 5, 200, 1, 01279088228, korba</td>
-<td></td>
-<td>10</td>
-<td>tests.UserRegisterTest@5633ed82</td></tr>
-<tr>
-<td title='tests.UserRegisterTest.EnterCreateAccountEmail()'><b>EnterCreateAccountEmail</b><br>Test class: tests.UserRegisterTest<br>Parameters: monicaatef46@gmail.com</td>
-<td></td>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User Registeration", "User Registeration"</td>
+<td><div><pre>java.lang.IllegalArgumentException: Input must be set
+	at org.openqa.selenium.internal.Require.nonNull(Require.java:56)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:97)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:128)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:61)
+	at utilities.Wait.wait(Wait.java:22)
+	at utilities.Locaters.locateElement(Locaters.java:42)
+	at Actions.UIActions.oneClick(UIActions.java:30)
+	at Pages.HomePage.pressOnSignInBtn(HomePage.java:16)
+	at stepDefintion.UserRegisteration.the_user_in_the_home_page(UserRegisteration.java:20)
+	at ?.the user in the home page(file:///C:/Users/Lenovo/eclipse-workspace/Test_Automation_framework/src/test/java/feature/UserRegisteration.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace42684986", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace42684986'><pre>java.lang.IllegalArgumentException: Input must be set
+	at org.openqa.selenium.internal.Require.nonNull(Require.java:56)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:97)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:128)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:61)
+	at utilities.Wait.wait(Wait.java:22)
+	at utilities.Locaters.locateElement(Locaters.java:42)
+	at Actions.UIActions.oneClick(UIActions.java:30)
+	at Pages.HomePage.pressOnSignInBtn(HomePage.java:16)
+	at stepDefintion.UserRegisteration.the_user_in_the_home_page(UserRegisteration.java:20)
+	at ?.the user in the home page(file:///C:/Users/Lenovo/eclipse-workspace/Test_Automation_framework/src/test/java/feature/UserRegisteration.feature:5)
+</pre></div></td>
 <td>0</td>
-<td>tests.UserRegisterTest@5633ed82</td></tr>
-<tr>
-<td title='tests.UserRegisterTest.EnterCreateAccountEmail()'><b>EnterCreateAccountEmail</b><br>Test class: tests.UserRegisterTest<br>Parameters: misa@gmail.com</td>
-<td></td>
-<td>0</td>
-<td>tests.UserRegisterTest@5633ed82</td></tr>
+<td>runner.TestRunner@782859e</td></tr>
 </table><p>
 </body>
 </html>

@@ -10,35 +10,34 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import Actions.BrowserActions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import utilities.ConfigDataProvider;
 import utilities.ExcelDataProvider;
 
 public class BaseTest {
 
 	public String className;
-	public String driverName="";
+	public String driverName = "";
 	public ConfigDataProvider Config;
 
-	@DataProvider(name ="ExcelData")
-	public Object[][] getDataExcel(ITestContext context) throws IOException 
-	{	
+	@DataProvider(name = "ExcelData")
+	public Object[][] getDataExcel(ITestContext context) throws IOException {
 		String sheetNameToParse = context.getAttribute("sheetName").toString();
 		ExcelDataProvider usersData = new ExcelDataProvider();
 		return usersData.getExcelData(sheetNameToParse);
 	}
+
 	@BeforeClass
 	@Parameters("driver")
-	public void setup(@Optional String driverName) 
-	{
+	public void setup(@Optional String driverName,final ITestContext testContext) {
+		className = testContext.getAllTestMethods()[0].getTestClass().getName();
 		Config = new ConfigDataProvider();
-		className =  "UserRegisterTest";
 		driverName = Config.getDataFromConfig("driver");
-		BrowserActions.driverSetup(className,driverName );
-
+		BrowserActions.driverSetup(className, driverName);
 	}
+
 	@AfterClass
-	void closeDriver() 
-	{
+	void closeDriver() {
 		BrowserActions.closeDriver(className);
 	}
 

@@ -14,9 +14,9 @@ public class CreateAccountPage extends BasePage {
 
 	public void enterCreateAccount(String email) {
 
-		uiActions2.type(emailTxt, email, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 20);
+		uiAction.type(emailTxt, email, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 20);
 
-		uiActions2.oneClick(submitCreateAccount, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 20);
+		uiAction.oneClick(submitCreateAccount, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 20);
 
 	}
 

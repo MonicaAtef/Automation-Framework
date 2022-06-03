@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 02 15:02:04 EET 2022</td>
+<td>Started on:</td><td>Thu Jun 02 15:21:26 EET 2022</td>
 </tr>
-<tr><td>Total time:</td><td>24 seconds (24861 ms)</td>
+<tr><td>Total time:</td><td>16 seconds (16359 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,19 +76,60 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='tests.UserRegisterTest.EnterUserData()'><b>EnterUserData</b><br>Test class: tests.UserRegisterTest<br>Parameters: Mrs., meko, atef, MonicaAtef1997, 0, May  , 0, Monica, Atef, helioplis, cairo, 5, 200, 1, 01279088228, korba</td>
-<td><div><pre>java.lang.Error: Unresolved compilation problem: 
-	ss cannot be resolved to a variable
-
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=102.0.5005.63)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;MONICA&apos;, ip: &apos;172.21.64.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c915eb9675b3ffc58c3b661914f64dfa, clearElement {id=f0d5136a-796a-40a0-8d54-6cdd845620ac}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64507}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64507/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (c915eb9675b3ffc58c3b661914f64dfa)] -&gt; id: address1]
+Session ID: c915eb9675b3ffc58c3b661914f64dfa
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:126)
+	at Actions.UIActions2.type(UIActions2.java:88)
+	at Pages.RegisterPage.addressFill(RegisterPage.java:61)
 	at tests.UserRegisterTest.EnterUserData(UserRegisterTest.java:36)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace354065912", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace354065912'><pre>java.lang.Error: Unresolved compilation problem: 
-	ss cannot be resolved to a variable
-
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1083461839", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1083461839'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=102.0.5005.63)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;MONICA&apos;, ip: &apos;172.21.64.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c915eb9675b3ffc58c3b661914f64dfa, clearElement {id=f0d5136a-796a-40a0-8d54-6cdd845620ac}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64507}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64507/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (c915eb9675b3ffc58c3b661914f64dfa)] -&gt; id: address1]
+Session ID: c915eb9675b3ffc58c3b661914f64dfa
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:126)
+	at Actions.UIActions2.type(UIActions2.java:88)
+	at Pages.RegisterPage.addressFill(RegisterPage.java:61)
 	at tests.UserRegisterTest.EnterUserData(UserRegisterTest.java:36)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -114,7 +155,7 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>0</td>
+<td>2</td>
 <td>tests.UserRegisterTest@673fdbce</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -125,11 +166,6 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.UserRegisterTest.PressOnSignInButtonTest()'><b>PressOnSignInButtonTest</b><br>Test class: tests.UserRegisterTest</td>
-<td></td>
-<td>22</td>
-<td>tests.UserRegisterTest@673fdbce</td></tr>
-<tr>
 <td title='tests.UserRegisterTest.EnterCreateAccountEmail()'><b>EnterCreateAccountEmail</b><br>Test class: tests.UserRegisterTest<br>Parameters: misa@gmail.com</td>
 <td></td>
 <td>0</td>
@@ -138,6 +174,11 @@ function toggleAllBoxes() {
 <td title='tests.UserRegisterTest.EnterCreateAccountEmail()'><b>EnterCreateAccountEmail</b><br>Test class: tests.UserRegisterTest<br>Parameters: monicaatef46@gmail.com</td>
 <td></td>
 <td>0</td>
+<td>tests.UserRegisterTest@673fdbce</td></tr>
+<tr>
+<td title='tests.UserRegisterTest.PressOnSignInButtonTest()'><b>PressOnSignInButtonTest</b><br>Test class: tests.UserRegisterTest</td>
+<td></td>
+<td>11</td>
 <td>tests.UserRegisterTest@673fdbce</td></tr>
 </table><p>
 </body>

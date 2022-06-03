@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-02T15:02:46 EET" name="Default suite" finished-at="2022-06-02T15:03:14 EET" duration-ms="28371">
+  <suite started-at="2022-06-03T17:57:04 EET" name="Default suite" finished-at="2022-06-03T17:58:20 EET" duration-ms="75741">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@782859e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-06-02T15:02:46 EET" name="Default test" finished-at="2022-06-02T15:03:14 EET" duration-ms="28371">
-      <class name="tests.UserRegisterTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:tests.UserRegisterTest@5633ed82]" started-at="2022-06-02T15:02:46 EET" name="setup" finished-at="2022-06-02T15:02:48 EET" duration-ms="2283" status="PASS">
+    <test started-at="2022-06-03T17:57:04 EET" name="Default test" finished-at="2022-06-03T17:58:20 EET" duration-ms="75741">
+      <class name="runner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@782859e]" started-at="2022-06-03T17:57:04 EET" name="setUpClass" finished-at="2022-06-03T17:57:05 EET" duration-ms="373" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@ceb7701]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:runner.TestRunner@782859e]" started-at="2022-06-03T17:57:05 EET" name="setup" finished-at="2022-06-03T17:58:20 EET" duration-ms="75163" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,123 +30,46 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="PressOnSignInButtonTest()[pri:0, instance:tests.UserRegisterTest@5633ed82]" started-at="2022-06-02T15:02:48 EET" name="PressOnSignInButtonTest" finished-at="2022-06-02T15:03:03 EET" duration-ms="14308" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PressOnSignInButtonTest -->
-        <test-method signature="EnterCreateAccountEmail(java.lang.String)[pri:0, instance:tests.UserRegisterTest@5633ed82]" started-at="2022-06-02T15:03:03 EET" name="EnterCreateAccountEmail" data-provider="ExcelData" finished-at="2022-06-02T15:03:04 EET" depends-on-methods="tests.UserRegisterTest.PressOnSignInButtonTest" duration-ms="144" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@782859e]" started-at="2022-06-03T17:58:20 EET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-06-03T17:58:20 EET" duration-ms="114" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[monicaatef46@gmail.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnterCreateAccountEmail -->
-        <test-method signature="EnterCreateAccountEmail(java.lang.String)[pri:0, instance:tests.UserRegisterTest@5633ed82]" started-at="2022-06-02T15:03:04 EET" name="EnterCreateAccountEmail" data-provider="ExcelData" finished-at="2022-06-02T15:03:04 EET" depends-on-methods="tests.UserRegisterTest.PressOnSignInButtonTest" duration-ms="94" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[misa@gmail.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnterCreateAccountEmail -->
-        <test-method signature="EnterUserData(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.UserRegisterTest@5633ed82]" started-at="2022-06-02T15:03:04 EET" name="EnterUserData" data-provider="ExcelData" finished-at="2022-06-02T15:03:14 EET" depends-on-methods="tests.UserRegisterTest.EnterCreateAccountEmail" duration-ms="10604" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Mrs.]]>
+                <![CDATA["User Registeration"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[meko]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[atef]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[MonicaAtef1997]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[May  ]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Monica]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Atef]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[helioplis]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[cairo]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[01279088228]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[korba]]>
+                <![CDATA["User Registeration"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Input must be set]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Input must be set
+at org.openqa.selenium.internal.Require.nonNull(Require.java:56)
+at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:97)
+at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:128)
+at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:61)
+at utilities.Wait.wait(Wait.java:22)
+at utilities.Locaters.locateElement(Locaters.java:42)
+at Actions.UIActions.oneClick(UIActions.java:30)
+at Pages.HomePage.pressOnSignInBtn(HomePage.java:16)
+at stepDefintion.UserRegisteration.the_user_in_the_home_page(UserRegisteration.java:20)
+at ✽.the user in the home page(file:///C:/Users/Lenovo/eclipse-workspace/Test_Automation_framework/src/test/java/feature/UserRegisteration.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EnterUserData -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:tests.UserRegisterTest@5633ed82]" started-at="2022-06-02T15:03:14 EET" name="closeDriver" finished-at="2022-06-02T15:03:14 EET" duration-ms="126" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@782859e]" started-at="2022-06-03T17:58:20 EET" name="tearDownClass" finished-at="2022-06-03T17:58:20 EET" duration-ms="21" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-      </class> <!-- tests.UserRegisterTest -->
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runner.TestRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
