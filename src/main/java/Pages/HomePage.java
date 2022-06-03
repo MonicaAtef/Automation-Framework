@@ -9,10 +9,10 @@ public class HomePage extends BasePage {
 		super(testClassName);
 	}
 
-	String signIn = "Sign in";
+	String signInButton = "Sign in";
 
 	public void pressOnSignInBtn() {
 
-		uiActions2.oneClick(signIn, LocateStrategy.LINKTEXT, ConditionsEnum.presenceOfElementLocated, 20);
+		uiAction.oneClick(signInButton, LocateStrategy.LINKTEXT, ConditionsEnum.presenceOfElementLocated, 20);
 	}
 }
