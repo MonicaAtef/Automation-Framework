@@ -17,11 +17,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import readers.ConfigarationReader;
 
 public class BrowserActions {
 
 	public static Map<String,WebDriver> mapper = new HashMap<String,WebDriver>();
 	public static WebDriver driver;
+	public static ConfigarationReader config;
 	public static void  driverSetup(String className, String driverName,Boolean grid) throws MalformedURLException {
 
 		if (driverName.equalsIgnoreCase("chromeDriver")) {
@@ -72,25 +74,27 @@ public class BrowserActions {
 	}
 	public static void addRemote(String className, String driverName) throws MalformedURLException {
 		DesiredCapabilities caps = new DesiredCapabilities();
+		config= new ConfigarationReader();
+		String remoteDriver = config.getDataFromConfig("remoteDriver");
 		if(driverName.equalsIgnoreCase("chromeDriver")) {
 			ChromeOptions options = new ChromeOptions();
 			options.merge(caps);
 			mapper.put(className,
-					new RemoteWebDriver( new URL("http://localhost:4444/"),options));
+					new RemoteWebDriver( new URL(remoteDriver),options));
 			driver = mapper.get(className);
 		}
 		else if (driverName.equalsIgnoreCase("edgeDriver")) {
 			FirefoxOptions options = new FirefoxOptions();
 			options.merge(caps);
 			mapper.put(className,
-					new RemoteWebDriver( new URL("http://localhost:4444/"),options));
+					new RemoteWebDriver( new URL(remoteDriver),options));
 			driver = mapper.get(className);
 		}
 		else if (driverName.equalsIgnoreCase("firefoxDriver")) {
 			EdgeOptions options = new EdgeOptions();
 			options.merge(caps);
 			mapper.put(className,
-					new RemoteWebDriver( new URL("http://localhost:4444/"),options));
+					new RemoteWebDriver( new URL(remoteDriver),options));
 			driver = mapper.get(className);
 		}
 	}

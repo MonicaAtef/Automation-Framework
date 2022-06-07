@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jun 07 22:04:25 EET 2022</td>
+<td>Started on:</td><td>Tue Jun 07 23:28:06 EET 2022</td>
 </tr>
-<tr><td>Total time:</td><td>42 seconds (42320 ms)</td>
+<tr><td>Total time:</td><td>31 seconds (31248 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,17 +76,25 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='tests.UserRegisterTest.EnterUserData()'><b>EnterUserData</b><br>Test class: tests.UserRegisterTest<br>Parameters: Mrs., meko, atef, MonicaAtef1997, 0, May  , 0, Monica, Atef, helioplis, cairo, 5, 200, 1, 01279088228, korba</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@name=&apos;id_gender&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: MicrosoftEdge=100.0.1185.50)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;MONICA&apos;, ip: &apos;172.21.64.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+System info: host: &apos;MONICA&apos;, ip: &apos;172.26.112.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 100.0.1185.50, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:37335}, msedge: {msedgedriverVersion: 100.0.1185.50 (d8ee69a5ee9b..., userDataDir: /tmp/.com.microsoft.Edge.Uh...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://172.23.0.5:4444/sessio..., se:cdpVersion: 100.0.1185.50, se:vnc: ws://172.23.0.5:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.23.0.5:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 93275045634525ef3831a072e7986acf
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at utilities.Wait.wait(Wait.java:27)
-	at utilities.Locaters.locateElements(Locaters.java:49)
-	at actions.UIActions.selectRadioButtonValue(UIActions.java:64)
+Command: [08c5b3362dbdd7fcebeaa053b94e2b1d, getElementText {id=3a0c0aa3-3c7f-4368-839e-999cbeb26229}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 100.0.1185.50, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:42093}, msedge: {msedgedriverVersion: 100.0.1185.50 (d8ee69a5ee9b..., userDataDir: /tmp/.com.microsoft.Edge.lJ...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://172.23.0.4:4444/sessio..., se:cdpVersion: 100.0.1185.50, se:vnc: ws://172.23.0.4:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.23.0.4:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[RemoteWebDriver: msedge on LINUX (08c5b3362dbdd7fcebeaa053b94e2b1d)] -&gt; xpath: //input[@name=&apos;id_gender&apos;]]
+Session ID: 08c5b3362dbdd7fcebeaa053b94e2b1d
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:201)
+	at actions.UIActions.selectRadioButtonValue(UIActions.java:66)
 	at pages.RegisterPage.selectGenderRadioButton(RegisterPage.java:32)
 	at pages.RegisterPage.userRegister(RegisterPage.java:67)
 	at tests.UserRegisterTest.EnterUserData(UserRegisterTest.java:38)
@@ -95,18 +103,31 @@ Session ID: 93275045634525ef3831a072e7986acf
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1035630938", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1035630938'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@name=&apos;id_gender&apos;] (tried for 30 second(s) with 500 milliseconds interval)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace553646648", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace553646648'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: MicrosoftEdge=100.0.1185.50)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;MONICA&apos;, ip: &apos;172.21.64.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+System info: host: &apos;MONICA&apos;, ip: &apos;172.26.112.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 100.0.1185.50, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:37335}, msedge: {msedgedriverVersion: 100.0.1185.50 (d8ee69a5ee9b..., userDataDir: /tmp/.com.microsoft.Edge.Uh...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://172.23.0.5:4444/sessio..., se:cdpVersion: 100.0.1185.50, se:vnc: ws://172.23.0.5:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.23.0.5:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 93275045634525ef3831a072e7986acf
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at utilities.Wait.wait(Wait.java:27)
-	at utilities.Locaters.locateElements(Locaters.java:49)
-	at actions.UIActions.selectRadioButtonValue(UIActions.java:64)
+Command: [08c5b3362dbdd7fcebeaa053b94e2b1d, getElementText {id=3a0c0aa3-3c7f-4368-839e-999cbeb26229}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 100.0.1185.50, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:42093}, msedge: {msedgedriverVersion: 100.0.1185.50 (d8ee69a5ee9b..., userDataDir: /tmp/.com.microsoft.Edge.lJ...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://172.23.0.4:4444/sessio..., se:cdpVersion: 100.0.1185.50, se:vnc: ws://172.23.0.4:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.23.0.4:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[RemoteWebDriver: msedge on LINUX (08c5b3362dbdd7fcebeaa053b94e2b1d)] -&gt; xpath: //input[@name=&apos;id_gender&apos;]]
+Session ID: 08c5b3362dbdd7fcebeaa053b94e2b1d
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:201)
+	at actions.UIActions.selectRadioButtonValue(UIActions.java:66)
 	at pages.RegisterPage.selectGenderRadioButton(RegisterPage.java:32)
 	at pages.RegisterPage.userRegister(RegisterPage.java:67)
 	at tests.UserRegisterTest.EnterUserData(UserRegisterTest.java:38)
@@ -134,7 +155,7 @@ Session ID: 93275045634525ef3831a072e7986acf
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>30</td>
+<td>2</td>
 <td>tests.UserRegisterTest@5a59ca5e</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -145,9 +166,9 @@ Session ID: 93275045634525ef3831a072e7986acf
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.UserRegisterTest.PressOnSignInButtonTest()'><b>PressOnSignInButtonTest</b><br>Test class: tests.UserRegisterTest</td>
+<td title='tests.UserRegisterTest.EnterCreateAccountEmail()'><b>EnterCreateAccountEmail</b><br>Test class: tests.UserRegisterTest<br>Parameters: misa@gmail.com</td>
 <td></td>
-<td>9</td>
+<td>0</td>
 <td>tests.UserRegisterTest@5a59ca5e</td></tr>
 <tr>
 <td title='tests.UserRegisterTest.EnterCreateAccountEmail()'><b>EnterCreateAccountEmail</b><br>Test class: tests.UserRegisterTest<br>Parameters: monicaatef46@gmail.com</td>
@@ -155,9 +176,9 @@ Session ID: 93275045634525ef3831a072e7986acf
 <td>0</td>
 <td>tests.UserRegisterTest@5a59ca5e</td></tr>
 <tr>
-<td title='tests.UserRegisterTest.EnterCreateAccountEmail()'><b>EnterCreateAccountEmail</b><br>Test class: tests.UserRegisterTest<br>Parameters: misa@gmail.com</td>
+<td title='tests.UserRegisterTest.PressOnSignInButtonTest()'><b>PressOnSignInButtonTest</b><br>Test class: tests.UserRegisterTest</td>
 <td></td>
-<td>0</td>
+<td>25</td>
 <td>tests.UserRegisterTest@5a59ca5e</td></tr>
 </table><p>
 </body>
