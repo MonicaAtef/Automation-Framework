@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import utilities.Locaters.LocateStrategy;
 import utilities.Wait.ConditionsEnum;
@@ -14,9 +14,12 @@ public class CreateAccountPage extends BasePage {
 
 	public void enterCreateAccount(String email) {
 
-		uiAction.type(emailTxt, email, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 20);
+		uiAction.type(emailTxt, email, LocateStrategy.ID, ConditionsEnum.PRESENCE, 20);
 
-		uiAction.oneClick(submitCreateAccount, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 20);
+	}
+	public void submitButton() {
+
+		uiAction.oneClick(submitCreateAccount, LocateStrategy.ID, ConditionsEnum.CLICKBLE, 20);
 
 	}
 

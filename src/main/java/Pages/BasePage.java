@@ -1,12 +1,11 @@
-package Pages;
+package pages;
 
 import java.io.IOException;
 import org.json.simple.parser.ParseException;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import Actions.UIActions;
-import utilities.JSONLocatersReader;
+import actions.UIActions;
 import utilities.Locaters;
 
 public class BasePage {
@@ -20,8 +19,5 @@ public class BasePage {
 		uiAction = new UIActions(testClassName);
 		locater = new Locaters (testClassName);
 	}
-	 public String getLocatorsFromJsonFile(String keyword) throws IOException, ParseException {
-
-	        return JSONLocatersReader.getLocatorsFromJsonFile(keyword, "src/main/resources/Locaters.JSON");
-	    }
+	
 }

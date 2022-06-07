@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import utilities.Locaters.LocateStrategy;
 import utilities.Wait.ConditionsEnum;
@@ -13,6 +13,6 @@ public class HomePage extends BasePage {
 
 	public void pressOnSignInBtn() {
 
-		uiAction.oneClick(signInButton, LocateStrategy.LINKTEXT, ConditionsEnum.presenceOfElementLocated, 20);
+		uiAction.oneClick(signInButton, LocateStrategy.LINKTEXT, ConditionsEnum.CLICKBLE, 20);
 	}
 }

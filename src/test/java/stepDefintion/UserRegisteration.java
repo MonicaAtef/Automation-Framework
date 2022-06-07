@@ -1,8 +1,8 @@
 package stepDefintion;
 
-import Pages.CreateAccountPage;
-import Pages.HomePage;
-import Pages.RegisterPage;
+import pages.CreateAccountPage;
+import pages.HomePage;
+import pages.RegisterPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

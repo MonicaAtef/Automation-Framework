@@ -1,30 +1,31 @@
 package stepDefintion;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import java.net.MalformedURLException;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import Actions.BrowserActions;
+import actions.BrowserActions;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
-import utilities.ConfigDataProvider;
+import readers.ConfigarationReader;
 
 public class TestBase extends AbstractTestNGCucumberTests {
 	public String className;
 	public String driverName;
-	public ConfigDataProvider Config;
+	public ConfigarationReader Config;
 
-	@BeforeClass
+	@Before
 	@Parameters("driver")
-	public void setup(@Optional String driverName) {
-		Config = new ConfigDataProvider();
+	public void setup(@Optional String driverName) throws MalformedURLException {
+		Config = new ConfigarationReader();
 		className = "UserRegisterTest";
 		driverName = Config.getDataFromConfig("driver");
-		BrowserActions.driverSetup(className, driverName);
+		BrowserActions.driverSetup(className, driverName,false);
 		BrowserActions.navigateToURL("http://automationpractice.com/index.php");
 	}
 
-	@AfterClass
+	@After
 	void closeDriver() {
 		BrowserActions.closeDriver(className);
 	}

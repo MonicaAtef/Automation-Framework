@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import Actions.UIActions.SelectType;
+import actions.UIActions.SelectType;
 
 import utilities.Locaters.LocateStrategy;
 import utilities.Wait.ConditionsEnum;
@@ -28,50 +28,108 @@ public class RegisterPage extends BasePage {
 	String phoneNumberId = "phone_mobile";
 	String addressAliasId = "alias";
 
+	private void selectGenderRadioButton(String gender) {
+		uiAction.selectRadioButtonValue(genderRadio, gender, LocateStrategy.XPATH,
+				ConditionsEnum.CLICKBLE, 30);
+	}
+
+	private void enterFirstName(String firstName) {
+		uiAction.type(customerFNameId, firstName, LocateStrategy.ID, ConditionsEnum.VISIBLE, 30);
+
+	}
+
+	private void enterlastName(String lastName) {
+		uiAction.type(customerLNameId, lastName, LocateStrategy.ID, ConditionsEnum.VISIBLE, 30);
+	}
+
+	private void enterPassword(String password) {
+		uiAction.type(passwdId, password, LocateStrategy.ID, ConditionsEnum.PRESENCE, 30);
+	}
+
+	private void selectDaysDropDownList(String daysIndex) {
+		uiAction.dropDownSelect(daysId, SelectType.INDEX, daysIndex, LocateStrategy.ID,
+				ConditionsEnum.PRESENCE, 30);
+	}
+
+	private void selectMonthsDropDownList(String month) {
+		uiAction.dropDownSelect(monthsId, SelectType.TEXT, month, LocateStrategy.ID,
+				ConditionsEnum.PRESENCE, 30);
+	}
+
+	private void selectYearDropDownList(String yearIndex) {
+		uiAction.dropDownSelect(yearId, SelectType.INDEX, yearIndex, LocateStrategy.ID,
+				ConditionsEnum.PRESENCE, 30);
+	}
+
 	public void userRegister(String gender, String firstName, String lastName, String password, String daysIndex,
 			String month, String yearIndex) {
 
-		uiAction.selectRadioButtonValue(genderRadio, gender, LocateStrategy.XPATH,
-				ConditionsEnum.presenceOfElementLocated, 30);
+		selectGenderRadioButton(gender);
+		enterFirstName(firstName);
+		enterlastName(lastName);
+		enterPassword(password);
+		selectDaysDropDownList(daysIndex);
+		selectMonthsDropDownList(month);
+		selectYearDropDownList(yearIndex);
 
-		uiAction.type(customerFNameId, firstName, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
+	}
 
-		uiAction.type(customerLNameId, lastName, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
+	private void enterAddressFirstName(String firstName) {
+		uiAction.type(addressFNameId, firstName, LocateStrategy.ID, ConditionsEnum.PRESENCE, 30);
 
-		uiAction.type(passwdId, password, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
+	}
 
-		uiAction.dropDownSelect(daysId, SelectType.INDEX, daysIndex, LocateStrategy.ID,
-				ConditionsEnum.presenceOfElementLocated, 30);
+	private void enterAddressLastName(String lastName) {
+		uiAction.type(addressLNameId, lastName, LocateStrategy.ID, ConditionsEnum.PRESENCE, 30);
 
-		uiAction.dropDownSelect(monthsId, SelectType.TEXT, month, LocateStrategy.ID,
-				ConditionsEnum.presenceOfElementLocated, 30);
+	}
 
-		uiAction.dropDownSelect(yearId, SelectType.INDEX, yearIndex, LocateStrategy.ID,
-				ConditionsEnum.presenceOfElementLocated, 30);
+	private void enterAddress(String address) {
 
+		uiAction.type(addressId, address, LocateStrategy.ID, ConditionsEnum.PRESENCE, 30);
+
+	}
+
+	private void enterCity(String city) {
+		uiAction.type(cityId, city, LocateStrategy.ID, ConditionsEnum.PRESENCE, 30);
+	}
+
+	private void selectState(String state) {
+		uiAction.dropDownSelect(stateId, SelectType.INDEX, state, LocateStrategy.XPATH,
+				ConditionsEnum.PRESENCE, 50);
+	}
+
+	private void enterPostalCode(String postalCode) {
+		uiAction.type(postalCodeId, postalCode, LocateStrategy.ID, ConditionsEnum.PRESENCE, 30);
+
+	}
+
+	private void selectCountry(String country) {
+		uiAction.dropDownSelect(countryId, SelectType.INDEX, country, LocateStrategy.ID,
+				ConditionsEnum.PRESENCE, 50);
+	}
+
+	private void enterPhoneNumber(String phone) {
+		uiAction.type(phoneNumberId, phone, LocateStrategy.ID, ConditionsEnum.PRESENCE, 30);
+	}
+
+	private void enterAddressAlias(String alias) {
+
+		uiAction.type(addressAliasId, alias, LocateStrategy.ID, ConditionsEnum.PRESENCE, 30);
 	}
 
 	public void addressFill(String firstName, String lastName, String address, String city, String state,
 			String postalCode, String country, String phone, String alias) {
 
-		uiAction.type(addressFNameId, firstName, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
+		enterAddressFirstName(firstName);
+		enterAddressLastName(lastName);
+		enterAddress(address);
+		enterCity(city);
+		selectState(state);
+		enterPostalCode(postalCode);
+		selectCountry(country);
+		enterPhoneNumber(phone);
+		enterAddressAlias(alias);
 
-		uiAction.type(addressLNameId, lastName, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
-
-		uiAction.type(addressId, address, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
-
-		uiAction.type(cityId, city, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
-
-		uiAction.dropDownSelect(stateId, SelectType.INDEX, state, LocateStrategy.XPATH,
-				ConditionsEnum.presenceOfElementLocated, 50);
-
-		uiAction.type(postalCodeId, postalCode, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
-
-		uiAction.dropDownSelect(countryId, SelectType.INDEX, country, LocateStrategy.ID,
-				ConditionsEnum.presenceOfElementLocated, 50);
-
-		uiAction.type(phoneNumberId, phone, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
-
-		uiAction.type(addressAliasId, alias, LocateStrategy.ID, ConditionsEnum.presenceOfElementLocated, 30);
 	}
 }

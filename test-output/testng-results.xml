@@ -1,71 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-03T17:57:04 EET" name="Default suite" finished-at="2022-06-03T17:58:20 EET" duration-ms="75741">
+  <suite started-at="2022-06-07T22:12:05 EET" name="Default suite" finished-at="2022-06-07T22:12:05 EET" duration-ms="453">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@782859e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@4d15107f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-06-03T17:57:04 EET" name="Default test" finished-at="2022-06-03T17:58:20 EET" duration-ms="75741">
+    <test started-at="2022-06-07T22:12:05 EET" name="Default test" finished-at="2022-06-07T22:12:05 EET" duration-ms="453">
       <class name="runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@782859e]" started-at="2022-06-03T17:57:04 EET" name="setUpClass" finished-at="2022-06-03T17:57:05 EET" duration-ms="373" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@4d15107f]" started-at="2022-06-07T22:12:05 EET" name="setUpClass" finished-at="2022-06-07T22:12:05 EET" duration-ms="353" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@ceb7701]]>
+                <![CDATA[org.testng.TestRunner@7e70bd39]]>
               </value>
             </param>
           </params>
+          <exception class="io.cucumber.java.InvalidMethodSignatureException">
+            <message>
+              <![CDATA[A method annotated with Before, After, BeforeStep or AfterStep must have one of these signatures:
+ * public void before_or_after(io.cucumber.java.Scenario scenario)
+ * public void before_or_after()
+at stepDefintion.TestBase.setup(java.lang.String)
+
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.java.InvalidMethodSignatureException: A method annotated with Before, After, BeforeStep or AfterStep must have one of these signatures:
+ * public void before_or_after(io.cucumber.java.Scenario scenario)
+ * public void before_or_after()
+at stepDefintion.TestBase.setup(java.lang.String)
+
+
+at io.cucumber.java.InvalidMethodSignatureException$InvalidMethodSignatureExceptionBuilder.build(InvalidMethodSignatureException.java:52)
+at io.cucumber.java.JavaHookDefinition.createInvalidSignatureException(JavaHookDefinition.java:52)
+at io.cucumber.java.JavaHookDefinition.requireValidMethod(JavaHookDefinition.java:33)
+at io.cucumber.java.JavaHookDefinition.<init>(JavaHookDefinition.java:19)
+at io.cucumber.java.GlueAdaptor.addDefinition(GlueAdaptor.java:27)
+at io.cucumber.java.JavaBackend.lambda$loadGlue$1(JavaBackend.java:42)
+at io.cucumber.java.MethodScanner.scan(MethodScanner.java:67)
+at io.cucumber.java.MethodScanner.scan(MethodScanner.java:58)
+at io.cucumber.java.MethodScanner.scan(MethodScanner.java:33)
+at io.cucumber.java.JavaBackend.lambda$loadGlue$2(JavaBackend.java:40)
+at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+at io.cucumber.java.JavaBackend.loadGlue(JavaBackend.java:40)
+at io.cucumber.core.runner.Runner.<init>(Runner.java:56)
+at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:47)
+at java.base/java.lang.ThreadLocal$SuppliedThreadLocal.initialValue(ThreadLocal.java:305)
+at java.base/java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:195)
+at java.base/java.lang.ThreadLocal.get(ThreadLocal.java:172)
+at io.cucumber.core.runtime.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:40)
+at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:35)
+at io.cucumber.core.runtime.CucumberExecutionContext.getRunner(CucumberExecutionContext.java:133)
+at io.cucumber.core.runtime.CucumberExecutionContext.runBeforeAllHooks(CucumberExecutionContext.java:86)
+at io.cucumber.testng.TestNGCucumberRunner.<init>(TestNGCucumberRunner.java:124)
+at io.cucumber.testng.AbstractTestNGCucumberTests.setUpClass(AbstractTestNGCucumberTests.java:27)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:65)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:381)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:319)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:178)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.java.InvalidMethodSignatureException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:runner.TestRunner@782859e]" started-at="2022-06-03T17:57:05 EET" name="setup" finished-at="2022-06-03T17:58:20 EET" duration-ms="75163" status="PASS">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@782859e]" started-at="2022-06-03T17:58:20 EET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-06-03T17:58:20 EET" duration-ms="114" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["User Registeration"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["User Registeration"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Input must be set]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Input must be set
-at org.openqa.selenium.internal.Require.nonNull(Require.java:56)
-at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:97)
-at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:128)
-at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:61)
-at utilities.Wait.wait(Wait.java:22)
-at utilities.Locaters.locateElement(Locaters.java:42)
-at Actions.UIActions.oneClick(UIActions.java:30)
-at Pages.HomePage.pressOnSignInBtn(HomePage.java:16)
-at stepDefintion.UserRegisteration.the_user_in_the_home_page(UserRegisteration.java:20)
-at ✽.the user in the home page(file:///C:/Users/Lenovo/eclipse-workspace/Test_Automation_framework/src/test/java/feature/UserRegisteration.feature:5)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@782859e]" started-at="2022-06-03T17:58:20 EET" name="tearDownClass" finished-at="2022-06-03T17:58:20 EET" duration-ms="21" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@4d15107f]" started-at="2022-06-07T22:12:05 EET" name="tearDownClass" finished-at="2022-06-07T22:12:05 EET" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

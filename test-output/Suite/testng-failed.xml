@@ -3,14 +3,15 @@
 <suite thread-count="1" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="1" parallel="tests" name="Test(failed)">
     <parameter name="driver" value="edgeDriver"/>
+    <parameter name="grid" value="true"/>
     <classes>
       <class name="tests.UserRegisterTest">
         <methods>
           <include name="PressOnSignInButtonTest"/>
-          <include name="EnterCreateAccountEmail"/>
           <include name="EnterUserData" invocation-numbers="0"/>
-          <include name="setup"/>
+          <include name="EnterCreateAccountEmail"/>
           <include name="closeDriver"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- tests.UserRegisterTest -->
     </classes>

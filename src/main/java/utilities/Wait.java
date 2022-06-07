@@ -10,23 +10,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Wait {
 	
 	public enum ConditionsEnum{
-		presenceOfElementLocated,
-		ElementToBeClickable,
-		invisibilityOfAllElements
+		PRESENCE,
+		CLICKBLE,
+		VISIBLE
 		
 	}
 	public void wait(WebDriver driver,int time, By element, ConditionsEnum condition) {
 		switch (condition) {
 
-		case presenceOfElementLocated:
+		case PRESENCE:
 			new WebDriverWait(driver, Duration.ofSeconds(time))
 					.until(ExpectedConditions.presenceOfElementLocated(element));
 							break;
-		case ElementToBeClickable:
+		case CLICKBLE:
 			new WebDriverWait(driver, Duration.ofSeconds(time))
 					.until(ExpectedConditions.elementToBeClickable(element));
 			break;
-		case invisibilityOfAllElements:
+		case VISIBLE:
 			new WebDriverWait(driver, Duration.ofSeconds(time))
 					.until(ExpectedConditions.invisibilityOfElementLocated(element));
 			break;

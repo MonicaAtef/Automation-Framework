@@ -3,11 +3,10 @@ package utilities;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import Actions.BrowserActions;
+import actions.BrowserActions;
 import utilities.Wait.ConditionsEnum;
 
 public class Locaters {

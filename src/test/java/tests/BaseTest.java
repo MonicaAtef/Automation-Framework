@@ -1,39 +1,29 @@
 package tests;
 
-import java.io.IOException;
+import java.net.MalformedURLException;
 
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import Actions.BrowserActions;
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import utilities.ConfigDataProvider;
-import utilities.ExcelDataProvider;
+import actions.BrowserActions;
+import readers.ConfigarationReader;
 
 public class BaseTest {
 
 	public String className;
 	public String driverName = "";
-	public ConfigDataProvider Config;
-
-	@DataProvider(name = "ExcelData")
-	public Object[][] getDataExcel(ITestContext context) throws IOException {
-		String sheetNameToParse = context.getAttribute("sheetName").toString();
-		ExcelDataProvider usersData = new ExcelDataProvider();
-		return usersData.getExcelData(sheetNameToParse);
-	}
+	public ConfigarationReader Config;
 
 	@BeforeClass
-	@Parameters("driver")
-	public void setup(@Optional String driverName,final ITestContext testContext) {
+	@Parameters({"driver","grid"})
+	public void setup(@Optional String driverName, @Optional Boolean grid,final ITestContext testContext) throws MalformedURLException {
 		className = testContext.getAllTestMethods()[0].getTestClass().getName();
-		Config = new ConfigDataProvider();
+		Config = new ConfigarationReader();
 		driverName = Config.getDataFromConfig("driver");
-		BrowserActions.driverSetup(className, driverName);
+		BrowserActions.driverSetup(className, driverName, grid);
 	}
 
 	@AfterClass

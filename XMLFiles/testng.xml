@@ -3,6 +3,7 @@
 <suite parallel="tests" thread-count="1" name="Suite">
   <test  name="Test">
    <parameter name="driver" value="edgeDriver"/>
+   <parameter name="grid" value="true"/>
     <classes>
       <class name="tests.UserRegisterTest"/>
     </classes>

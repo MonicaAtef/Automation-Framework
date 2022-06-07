@@ -3,10 +3,11 @@ package tests;
 import org.testng.annotations.Test;
 
 import org.testng.Reporter;
-import Actions.BrowserActions;
-import Pages.CreateAccountPage;
-import Pages.HomePage;
-import Pages.RegisterPage;
+import actions.BrowserActions;
+import pages.CreateAccountPage;
+import pages.HomePage;
+import pages.RegisterPage;
+import utilities.DataProviderClass;
 
 public class UserRegisterTest extends BaseTest {
 
@@ -20,15 +21,16 @@ public class UserRegisterTest extends BaseTest {
 		Reporter.getCurrentTestResult().getTestContext().setAttribute("sheetName", tabName);
 	}
 
-	@Test(dependsOnMethods = "PressOnSignInButtonTest", dataProvider = "ExcelData")
+	@Test(dependsOnMethods = "PressOnSignInButtonTest", dataProvider = "ExcelData",dataProviderClass=DataProviderClass.class)
 	public void EnterCreateAccountEmail(String email){
 		CreateAccountPage createAccount = new CreateAccountPage(className);
 		createAccount.enterCreateAccount(email);
+		createAccount.submitButton();
 		String tabName = "UserData";
 		Reporter.getCurrentTestResult().getTestContext().setAttribute("sheetName", tabName);
 	}
 
-	@Test(dependsOnMethods = "EnterCreateAccountEmail", dataProvider = "ExcelData")
+	@Test(dependsOnMethods = "EnterCreateAccountEmail", dataProvider = "ExcelData",dataProviderClass=DataProviderClass.class)
 	public void EnterUserData(String gender, String firstName, String lastName, String password, String daysIndex,
 			String month, String yearIndex, String addressFName, String addressLName, String address, String city,
 			String stateIndex, String postalCode, String country, String phone, String alias) {
