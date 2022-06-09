@@ -17,5 +17,4 @@ Hybrid Automation Framework using Selenium java
 
   • Support parallel execution using Selenium Grid 4 & docker
 
-  • Support parallel execution using HashMap
 
